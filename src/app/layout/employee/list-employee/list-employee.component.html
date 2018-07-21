@@ -38,8 +38,25 @@
             <td>
                 <a routerLink="detail/{{ item.uuid }}" [routerLinkActive]="['router-link-active']">
                     <i class="fa fa-edit"></i>Sửa</a>&nbsp;
-                <span style="color:red;" href="#" (click)="delete(item.uuid)">
-                    <i class="fa fa-times"></i> Xóa</span>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                    <i class="fa fa-times"></i> Xóa</button>
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p>Bạn có chắc chắn muốn xóa</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" (click)="delete(item.uuid)" data-dismiss="modal">Xóa</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </td>
         </tr>
     </tbody>
