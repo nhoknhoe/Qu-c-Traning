@@ -5,7 +5,8 @@ import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeComponent } from './employee.component';
 import {DetailEmployeeComponent} from './detail-employee/detail-employee.component';
 import {EmployeeService} from './Employee.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule,FormControl,Validators } from '@angular/forms';
+// import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [

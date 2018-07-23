@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit } from '@angular/core';
 import {EmployeeService} from '../Employee.service'
 import { Employee } from '../Employee';
 @Component({
@@ -12,12 +12,13 @@ dataEmployee:Array<Employee>=[];
   {
     
   }
-
   ngOnInit() {
+    this.dataEmployee =  this.dataService.getLists();
+  }
+  ngAfterViewInit(){
     this.dataEmployee =  this.dataService.getLists();
   }
   delete(uuid:string):void{
     this.dataEmployee = this.dataService.remove(uuid);
   }
-
 }
